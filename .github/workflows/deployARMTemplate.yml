@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - master
+      
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 env:
   AZURE_SUBSCRIPTION_ID: aa351b29-d810-40f4-b122-8e0af15432ac   # set this to your Azure Subscription Id
   AZURE_RESOURCE_GROUP: GitHubActionExercise-rg   # set this to your target resource group
